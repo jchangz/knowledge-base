@@ -6,9 +6,7 @@ type: mental-model
 
 # Imperative vs declarative
 
-**Imperative** code describes *how* to do something, step by step — explicit instructions that mutate state as they go (assign a variable, loop, increment a counter).
-
-**Declarative** code describes *what* you want and lets something else figure out the how.
+**TL;DR:** Imperative code spells out the steps — loop, mutate, assign, repeat. Declarative code just describes the result you want and lets something else handle the how (`reduce`, SQL, JSX). Neither is automatically better: declarative reads cleaner, but only if the thing doing the "how" for you actually does it well; imperative is more verbose but hides nothing. The real trap is mixing them — using something that *looks* declarative (like `reduce`) to secretly do imperative work. That's what confuses the next reader, not the mutation itself.
 
 ## Example
 
@@ -39,6 +37,6 @@ const countedNames = names.reduce((allNames, name) => ({
 - React JSX (declare the UI for a given state) vs. manually calling `document.createElement`/`appendChild` (imperative DOM manipulation)
 - CSS (declare the desired layout) vs. manually computing element positions with JS
 
-## Takeaway
+## How to remember which is which
 
-Neither style is universally "better" — declarative code tends to be easier to read and reason about because it hides mechanics you don't need to track, but it depends on the underlying tool actually doing the how correctly and efficiently. Imperative code is more verbose but leaves nothing hidden. The failure mode to watch for is mixing them: using a declarative-looking construct to do imperative work, which misleads whoever reads it next.
+Ordering food: **imperative** is walking into the kitchen and telling the cook each step ("heat the pan, crack the egg, flip it now") — you own every instruction. **Declarative** is sitting at the table and saying "I'll have the omelette" — you state the result, the kitchen owns the how.
