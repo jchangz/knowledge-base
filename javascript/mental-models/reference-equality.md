@@ -6,9 +6,9 @@ type: mental-model
 
 # Reference equality as change detection
 
-**Takeaway:** most JS tooling detects "did anything change" the cheap way — comparing references (`===`) rather than deeply inspecting values. Mutating an object in place never changes its reference, so anything relying on reference equality will think nothing happened, even though the contents did. A lot of "rules" that look like style preferences (don't mutate state, don't mutate reducer state) are really this one mechanical fact showing up repeatedly.
+**TL;DR:** most JS tooling checks "did anything change" the cheap way — comparing references (`===`) instead of actually inspecting the values. Mutate an object in place and its reference never changes, so anything relying on reference equality thinks nothing happened, even though the contents did. A bunch of rules that feel like style preferences — don't mutate state, don't mutate a reducer's state — are really just this one fact showing up again and again.
 
-See [reduce-vs-for-loop](../patterns/reduce-vs-for-loop.md) for a worked example of the same reference-vs-mutation distinction in plain JS, without any framework involved.
+See [reduce-vs-for-loop](../patterns/reduce-vs-for-loop.md) for a worked example of the same reference-vs-mutation distinction in plain JS, without any framework involved. See [shared-mutable-references](shared-mutable-references.md) for how this same fact shows up at other scales, including prototype pollution.
 
 ## The fundamental case
 

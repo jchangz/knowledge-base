@@ -6,6 +6,8 @@ type: gotcha
 
 # Null-prototype objects
 
+See [shared-mutable-references](shared-mutable-references.md) for how this connects to reference equality and immutability conventions elsewhere in JS.
+
 **TL;DR:** a plain `{}` isn't actually empty — it inherits every property on `Object.prototype` (`toString`, `constructor`, `__proto__`, ...) via its prototype chain. If you use a plain object as a dictionary for arbitrary/untrusted string keys, a key that collides with one of those names doesn't get a fresh slot — it shadows or triggers the inherited one. `Object.create(null)` gives you an object with no prototype chain at all, so there's nothing to collide with.
 
 ## The collision
