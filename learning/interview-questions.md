@@ -24,8 +24,10 @@ Pulled from the reference-equality / prototype-pollution deep dive. Goal: be abl
 - [ ] What does `Object.create(null)` do, and when would you reach for it?
 - [ ] What's the difference between a getter/setter accessor property and a normal data property?
 - [ ] How would you implement a simple reactive/observable object using getters/setters? (relevant to explaining how Vue/MobX reactivity works internally)
+- [ ] What's the difference between an instance method and a static method in JS — where does each one actually live?
+- [ ] How do you check whether an object has a property without false negatives — walk through `obj[key]`, `hasOwnProperty`, `Object.hasOwn`, and `in`.
 
-→ [null-prototype-objects](../javascript/mental-models/null-prototype-objects.md)
+→ [null-prototype-objects](../javascript/mental-models/null-prototype-objects.md), [obj-key-vs-hasownproperty](../javascript/patterns/obj-key-vs-hasownproperty.md)
 
 ## Niche (security/appsec-leaning, or senior "tell me about an interesting bug" moments)
 
